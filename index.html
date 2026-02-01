@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Mario Game</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(#7ec0ff, #b6f7c1);
+      overflow: hidden;
+      font-family: Arial;
+    }
+    #player {
+      width: 40px;
+      height: 40px;
+      background: red;
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="player"></div>
+
+<script>
+  const player = document.getElementById("player");
+  let x = 50, y = 20;
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "a") x -= 10;
+    if (e.key === "d") x += 10;
+    if (e.key === "w") y += 10;
+    if (e.key === "s") y -= 10;
+
+    player.style.left = x + "px";
+    player.style.bottom = y + "px";
+  });
+</script>
+
+</body>
+</html>
